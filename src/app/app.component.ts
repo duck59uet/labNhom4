@@ -7,7 +7,7 @@ import { SidebarService } from './sidebar/sidebar.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-pro-sidebar';
+  title = 'VNPT Open Close Door';
   constructor(public sidebarservice: SidebarService) { }
   toggleSidebar() {
     this.sidebarservice.setSidebarState(!this.sidebarservice.getSidebarState());

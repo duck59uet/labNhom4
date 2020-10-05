@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class SidebarService {
+
+  public routerLinkVariable = "";
+
   toggled = false;
   _hasBackgroundImage = true;
   menus = [
     {
-      title: 'general',
+      title: 'General',
       type: 'header'
     },
     {
@@ -16,17 +20,9 @@ export class SidebarService {
       icon: 'fa fa-tachometer-alt',
       active: false,
       type: 'dropdown',
-      badge: {
-        text: 'New ',
-        class: 'badge-warning'
-      },
       submenus: [
         {
-          title: 'Dashboard 1',
-          badge: {
-            text: 'Pro ',
-            class: 'badge-success'
-          }
+          title: 'Dashboard 1'
         },
         {
           title: 'Dashboard 2'
@@ -37,80 +33,34 @@ export class SidebarService {
       ]
     },
     {
-      title: 'E-commerce',
-      icon: 'fa fa-shopping-cart',
-      active: false,
-      type: 'dropdown',
-      badge: {
-        text: '3',
-        class: 'badge-danger'
-      },
-      submenus: [
-        {
-          title: 'Products',
-        },
-        {
-          title: 'Orders'
-        },
-        {
-          title: 'Credit cart'
-        }
-      ]
-    },
-    {
-      title: 'Components',
+      title: 'Quản lý nhân viên',
       icon: 'far fa-gem',
       active: false,
       type: 'dropdown',
+      routerLinkVariable : '',
       submenus: [
         {
-          title: 'General',
+          title: 'Cập nhật nhân viên',
         },
         {
-          title: 'Panels'
-        },
-        {
-          title: 'Tables'
-        },
-        {
-          title: 'Icons'
-        },
-        {
-          title: 'Forms'
+          title: 'Tìm kiếm nhân viên'
         }
       ]
     },
     {
-      title: 'Charts',
+      title: 'Quản lý In/Out',
       icon: 'fa fa-chart-line',
       active: false,
       type: 'dropdown',
+      routerLinkVariable : '',
       submenus: [
         {
-          title: 'Pie chart',
+          title: 'Lịch sử truy nhập',
+          routerLinkVariable: '/log'
         },
         {
-          title: 'Line chart'
-        },
-        {
-          title: 'Bar chart'
-        },
-        {
-          title: 'Histogram'
-        }
-      ]
-    },
-    {
-      title: 'Maps',
-      icon: 'fa fa-globe',
-      active: false,
-      type: 'dropdown',
-      submenus: [
-        {
-          title: 'Google maps',
-        },
-        {
-          title: 'Open street map'
+          title: 'Lịch sử truy nhập trái phép',
+          routerLinkVariable: '/loginvalid'
         }
       ]
     },
@@ -119,24 +69,16 @@ export class SidebarService {
       type: 'header'
     },
     {
-      title: 'Documentation',
+      title: 'Hướng dẫn sử dụng',
+      routerLinkVariable: '/help',
       icon: 'fa fa-book',
-      active: false,
-      type: 'simple',
-      badge: {
-        text: 'Beta',
-        class: 'badge-primary'
-      },
-    },
-    {
-      title: 'Calendar',
-      icon: 'fa fa-calendar',
       active: false,
       type: 'simple'
     },
     {
-      title: 'Examples',
-      icon: 'fa fa-folder',
+      title: 'Liên hệ',
+      routerLinkVariable: '/contact',
+      icon: 'fa fa-bell',
       active: false,
       type: 'simple'
     }
