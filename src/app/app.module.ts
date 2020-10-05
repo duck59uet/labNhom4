@@ -24,6 +24,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { API} from './services/api';
 import { ContactsComponent } from './contacts/contacts.component';
 import { DocumentsComponent } from './documents/documents.component';
+import { SigninComponent } from './signin/signin.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -36,7 +37,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     LogsComponent,
     LogInvalidsComponent,
     ContactsComponent,
-    DocumentsComponent
+    DocumentsComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,

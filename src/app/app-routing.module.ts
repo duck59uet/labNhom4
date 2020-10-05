@@ -4,13 +4,15 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { LogInvalidsComponent } from './log-invalids/log-invalids.component';
 import { LogsComponent } from './logs/logs.component';
+import { SigninComponent } from './signin/signin.component';
 // import { SidebarComponent } from './sidebar/sidebar.component';
 
 const routes: Routes = [
    {path:'log', component:LogsComponent},
    {path:'loginvalid', component:LogInvalidsComponent},
    {path:'contact', component:ContactsComponent},
-   {path:'help', component:DocumentsComponent}
+   {path:'help', component:DocumentsComponent},
+   {path:'signin', component:SigninComponent}
 ];
 
 @NgModule({
