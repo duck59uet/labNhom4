@@ -1,0 +1,68 @@
+<div class='container'>
+  <div>
+    <button type="button" (click)="export()" class="btn btn-danger"><i class="fas fa-file-export"></i>
+      Xuất file Excel
+    </button>
+  </div>
+  <hr>
+  <!-- <form [formGroup]="formGroup">
+    <input
+      type="text"
+      class="form-control"
+      name="searchString"
+      placeholder="Type to search..."
+      formControlName="filter"
+    />
+  </form>  -->
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-fixed" id="excel-table" >
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Mã nhân viên</th>
+          <th>Tên nhân viên</th>
+          <th>Chức danh</th>
+          <th>SĐT</th>
+          <th>Email</th>
+          <th>Đơn vị</th>
+          <th>Kiểu nhận dạng</th>
+          <th>Camera</th>
+          <th>Scanner</th>
+          <th>Thiết bị</th>
+          <th>Cửa</th>
+          <th>Thời gian</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="total == 0">
+        <tr>
+          <td>
+            Chưa có dữ liệu
+          </td>
+        </tr>
+      </tbody>
+      <tbody *ngIf="total > 0">
+        <!-- <tr *ngFor = "let item of logs; let i = index"> -->
+        <tr *ngFor="let item of logs | paginate: { itemsPerPage: 5, currentPage: page }; let i = index">
+          <td class="w-5">{{i+1}}</td>
+          <td class="w-10">{{item.EmployeeCode}}</td>
+          <td class="w-30">{{item.EmployeeName}}</td>
+          <td class="w-20">{{item.EmployeeTitle}}</td>
+          <td class="w-20">{{item.EmployeePhone}}</td>
+          <td class="w-10">{{item.EmployeeEmail}}</td>
+          <td class="w-20">{{item.DepartmentName}}</td>
+          <td class="w-20">{{item.StyleScan}}</td>
+          <td class="w-20">{{item.CameraName}}</td>
+          <td class="w-20">{{item.ScannerName}}</td>
+          <td class="w-20">{{item.TerminalName}}</td>
+          <td class="w-20">{{item.DoorName}}</td>
+          <td class="w-auto">{{item.TimeInOut}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <pagination-controls class='float-right' (pageChange)="page = $event" responsive="true" previousLabel="Trước"
+      nextLabel="Sau"></pagination-controls>
+  </div>
+</div>
