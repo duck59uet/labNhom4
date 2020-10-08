@@ -3,18 +3,23 @@ import { Routes, RouterModule } from '@angular/router';
 import { ContactsComponent } from './contacts/contacts.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { LogInvalidsComponent } from './log-invalids/log-invalids.component';
+import { AuthGuard } from './login-guard.guard';
 import { LoginComponent } from './login/login.component';
 import { LogsComponent } from './logs/logs.component';
 import { SigninComponent } from './signin/signin.component';
 // import { SidebarComponent } from './sidebar/sidebar.component';
 
+//Su dung guard
+
 const routes: Routes = [
+   {path:'', component:SigninComponent, canActivate: [AuthGuard]},
    {path:'log', component:LogsComponent},
    {path:'loginvalid', component:LogInvalidsComponent},
    {path:'contact', component:ContactsComponent},
    {path:'help', component:DocumentsComponent},
    {path:'signin', component:SigninComponent},
-   {path:'login', component:LoginComponent}
+   {path:'login', component:LoginComponent},
+   {path:'**', component:LoginComponent}
 ];
 
 @NgModule({
