@@ -24,9 +24,9 @@ export class LoginComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private alertService: AlertService
   ) {
-    if (this.authenticationService.currentUserValue) {
-      this.router.navigate(['/']);
-    }
+    // if (this.authenticationService.currentUserValue) {
+    //   this.router.navigate(['/']);
+    // }
   }
 
   ngOnInit() {

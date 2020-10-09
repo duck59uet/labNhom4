@@ -12,23 +12,14 @@ export class AuthenticationService {
     public currentUser: Observable<User>;
 
     constructor(private http: HttpClient, private api : API) {
-        this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('userName')));
-        this.currentUser = this.currentUserSubject.asObservable();
     }
 
-    public get currentUserValue(): User {
-        return this.currentUserSubject.value;
-    }
 
     login(username: string, password: string) {
-        return this.http.post<any>(`/users/authenticate`, { username, password })
+        return this.api.get('/api/users')
             .pipe(map(user => {
-                // login successful if there's a jwt token in the response
-                if (user && user.token) {
-                    // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('userName', JSON.stringify(user));
-                    this.currentUserSubject.next(user);
-                }
+                
+                
 
                 return user;
             }));
