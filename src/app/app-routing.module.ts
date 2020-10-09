@@ -6,6 +6,8 @@ import { LogInvalidsComponent } from './log-invalids/log-invalids.component';
 import { LoginComponent } from './login/login.component';
 import { LogsComponent } from './logs/logs.component';
 import { SigninComponent } from './signin/signin.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { CreateComponent } from './employee/create/create.component';
 // import { SidebarComponent } from './sidebar/sidebar.component';
 
 const routes: Routes = [
@@ -14,7 +16,10 @@ const routes: Routes = [
    {path:'contact', component:ContactsComponent},
    {path:'help', component:DocumentsComponent},
    {path:'signin', component:SigninComponent},
-   {path:'login', component:LoginComponent}
+   {path:'login', component:LoginComponent},
+   {path:'employee', component:EmployeeComponent},
+   {path:'employee/create',component:CreateComponent}
+
 ];
 
 @NgModule({

@@ -40,10 +40,12 @@ export class SidebarService {
       routerLinkVariable : '',
       submenus: [
         {
-          title: 'Cập nhật nhân viên',
+          title: 'Thêm mới nhân viên',
+          routerLinkVariable: '/employee/create'
         },
         {
-          title: 'Tìm kiếm nhân viên'
+          title: 'Danh sách nhân viên',
+          routerLinkVariable: '/employee'
         }
       ]
     },
