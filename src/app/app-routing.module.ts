@@ -20,17 +20,10 @@ const routes: Routes = [
    {path:'contact', component:ContactsComponent},
    {path:'help', component:DocumentsComponent},
    {path:'signin', component:SigninComponent},
-<<<<<<< .mine
    {path:'login', component:LoginComponent},
    {path:'employee', component:EmployeeComponent},
    {path:'employee/create',component:CreateComponent}
 
-=======
-   {path:'login', component:LoginComponent},
-   {path:'**', component:LoginComponent}
-
-
->>>>>>> .theirs
 ];
 
 @NgModule({
