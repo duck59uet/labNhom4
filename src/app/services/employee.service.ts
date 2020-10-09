@@ -9,7 +9,10 @@ import { FormBuilder, Validators } from '@angular/forms'
 })
 export class EmployeeService {
 
-  constructor(private api:API,private fb:FormBuilder) { }
+  constructor(
+    private api: API,
+    private fb: FormBuilder,
+    private httpClient: HttpClient) { }
 
 
 
@@ -22,21 +25,31 @@ export class EmployeeService {
     DepartmentName: ['', [Validators.required]]
   })
 
-  getListEmployee(){
+  getListEmployee() {
+
     return this.api.get('/api/employees');
   }
 
-  createEmployee(){
-    var body={
-      EmployeeCode: this.formModel.value.EmployeeCode,
-      EmployeeName: this.formModel.value.EmployeeName,
-      EmployeeTitle: this.formModel.value.EmployeeTitle,
-      EmployeePhone: this.formModel.value.EmployeePhone,
-      EmployeeEmail: this.formModel.value.EmployeeEmail,
-      DepartmentName: this.formModel.value.DepartmentName,
-    }
-    return this.api.post('/api/employees',body);
+  createEmployee() {
+
+    this.api.post('/api/employees', 
+     {
+      'EmployeeCode': this.formModel.value.EmployeeCode,
+      'EmployeeName': this.formModel.value.EmployeeName,
+      'EmployeeTitle': this.formModel.value.EmployeeTitle,
+      'EmployeePhone': this.formModel.value.EmployeePhone,
+      'EmployeeEmail': this.formModel.value.EmployeeEmail,
+      'DepartmentName': this.formModel.value.DepartmentName
+    }).subscribe(
+      (data: any) => {
+        // Xu ly khi data tra ve thanh cong (status code = 200)
+        console.log(data);
+      },
+      (error: any) => {
+        // Xu ly khi data tra ve thanh cong (status code != 200)
+      }
+    );
   }
 
-  
+
 }

@@ -23,8 +23,6 @@ export class CreateComponent implements OnInit {
     
   }
   insertRecord() {
-    this.service.createEmployee().subscribe(res => {
-     
-    });
+    this.service.createEmployee();
   }
 }

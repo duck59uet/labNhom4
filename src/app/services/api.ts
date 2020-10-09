@@ -83,8 +83,9 @@ export class API {
    * @param data
    */
   post(url, data) {
+    const headers = new HttpParams().set('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
     data = JSON.stringify(data);
-    return this.http.post(this.config.API_URL + url, data, this.getRequestOptions()).pipe(catchError(this.handleError));
+    return this.http.post(this.config.API_URL + url, data,  this.getRequestOptions()).pipe(catchError(this.handleError));
   }
 
   /**
@@ -235,7 +236,7 @@ export class API {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        Authorization: token
+        // Authorization: token
       })
     };
 
