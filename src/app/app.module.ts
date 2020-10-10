@@ -30,6 +30,7 @@ import { SigninComponent } from './signin/signin.component';
 import { LoginComponent } from './login/login.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { CreateComponent } from './employee/create/create.component';
+import { HomeComponent } from './home/home.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -47,7 +48,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SigninComponent,
     LoginComponent,
     EmployeeComponent,
-    CreateComponent
+    CreateComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -41,11 +41,11 @@ export class SidebarService {
       submenus: [
         {
           title: 'Thêm mới nhân viên',
-          routerLinkVariable: '/employee/create'
+          routerLinkVariable: '/home/employee/create'
         },
         {
           title: 'Danh sách nhân viên',
-          routerLinkVariable: '/employee'
+          routerLinkVariable: '/home/employee'
         }
       ]
     },
@@ -58,7 +58,7 @@ export class SidebarService {
       submenus: [
         {
           title: 'Lịch sử truy nhập',
-          routerLinkVariable: '/log'
+          routerLinkVariable: '/home/log'
         },
         {
           title: 'Lịch sử truy nhập trái phép',

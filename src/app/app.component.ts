@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SidebarService } from './sidebar/sidebar.service';
 
 @Component({
   selector: 'app-root',
@@ -8,23 +7,9 @@ import { SidebarService } from './sidebar/sidebar.service';
 })
 export class AppComponent {
   title = 'VNPT Open Close Door';
-  constructor(public sidebarservice: SidebarService) { }
+  constructor() { }
 
   ngOnInit(){
     localStorage.clear();
-  }
-
-  toggleSidebar() {
-    this.sidebarservice.setSidebarState(!this.sidebarservice.getSidebarState());
-  }
-  toggleBackgroundImage() {
-    this.sidebarservice.hasBackgroundImage = !this.sidebarservice.hasBackgroundImage;
-  }
-  getSideBarState() {
-    return this.sidebarservice.getSidebarState();
-  }
-
-  hideSidebar() {
-    this.sidebarservice.setSidebarState(true);
   }
 }

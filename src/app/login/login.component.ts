@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     // }
 
     if(localStorage.getItem('userName')){
-      this.router.navigate(['/employee'])
+      this.router.navigate(['/home'])
     }
   }
 
