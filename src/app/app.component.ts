@@ -9,6 +9,11 @@ import { SidebarService } from './sidebar/sidebar.service';
 export class AppComponent {
   title = 'VNPT Open Close Door';
   constructor(public sidebarservice: SidebarService) { }
+
+  ngOnInit(){
+    localStorage.clear();
+  }
+
   toggleSidebar() {
     this.sidebarservice.setSidebarState(!this.sidebarservice.getSidebarState());
   }

@@ -8,26 +8,33 @@ import { API } from './api';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
-    private currentUserSubject: BehaviorSubject<User>;
-    public currentUser: Observable<User>;
+    hasUser : boolean = false;
 
-    constructor(private http: HttpClient, private api : API) {
+    constructor(private http: HttpClient, private api: API) {
     }
 
-
     login(username: string, password: string) {
-        return this.api.get('/api/users')
+        return this.api.get(`/api/users`)
             .pipe(map(user => {
-                
-                
 
-                return user;
+                var res = [];
+                for (var x in user) {
+                    user.hasOwnProperty(x) && res.push(user[x])
+                }
+                res.forEach(element => {
+                    if(element["Username"] === username && element["Password"] === password){
+                        localStorage.setItem('userName', element["Username"]);
+                        localStorage.setItem('Name', element["Usermail"]);
+                        this.hasUser = true;
+                    }
+                });
+
+                return this.hasUser;
             }));
     }
 
     logout() {
-        // remove user from local storage to log user out
         localStorage.removeItem('userName');
-        this.currentUserSubject.next(null);
+        localStorage.removeItem('Name');
     }
 }

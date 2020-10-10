@@ -14,7 +14,7 @@ import { CreateComponent } from './employee/create/create.component';
 //Su dung guard
 
 const routes: Routes = [
-   {path:'', component:SigninComponent, canActivate: [AuthGuard]},
+   {path:'', component:LoginComponent, canActivate: [AuthGuard]},
    {path:'log', component:LogsComponent},
    {path:'loginvalid', component:LogInvalidsComponent},
    {path:'contact', component:ContactsComponent},

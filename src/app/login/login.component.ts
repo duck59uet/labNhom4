@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { AlertService } from '../services/alert.service';
 import { AuthenticationService } from '../services/authentication.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -22,11 +23,16 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private toastr: ToastrService
   ) {
     // if (this.authenticationService.currentUserValue) {
     //   this.router.navigate(['/']);
     // }
+
+    if(localStorage.getItem('userName')){
+      this.router.navigate(['/employee'])
+    }
   }
 
   ngOnInit() {
@@ -56,8 +62,13 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
           this.router.navigate([this.returnUrl]);
+          if(data == false){
+            this.toastr.warning('Đăng nhập thất bại', 'Kiểm tra lại tài khoản mật khẩu');
+            this.loading = false;
+          }
         },
         error => {
+          this.toastr.warning('Đăng nhập thất bại');
           this.alertService.error(error);
           this.loading = false;
         });

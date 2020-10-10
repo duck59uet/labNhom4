@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { BsDropdownModule } from 'ngx-bootstrap';
 
+import { ToastrModule } from 'ngx-toastr';
+
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
@@ -28,6 +30,7 @@ import { SigninComponent } from './signin/signin.component';
 import { LoginComponent } from './login/login.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { CreateComponent } from './employee/create/create.component';
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -55,7 +58,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HttpClientModule,
     NgxPaginationModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [ 
     API, 
