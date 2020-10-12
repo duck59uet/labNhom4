@@ -36,19 +36,11 @@ export class SidebarService {
       submenus: [
         {
           title: 'Thêm mới nhân viên',
-<<<<<<< HEAD
-          routerLinkVariable: '/employee/create'
-        },
-        {
-          title: 'Danh sách nhân viên',
-          routerLinkVariable: '/employee'
-=======
           routerLinkVariable: '/home/employee/create'
         },
         {
           title: 'Danh sách nhân viên',
           routerLinkVariable: '/home/employee'
->>>>>>> 0b56c2ca1c1e52db7c774c11907094d66dbe7b7b
         }
       ]
     },

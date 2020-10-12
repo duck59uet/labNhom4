@@ -1,11 +1,7 @@
 <h2>Danh sách nhân viên</h2>
 <div class='container'>
   <div>
-<<<<<<< HEAD
     <a href="/employee/create" (click)="export()" class="btn btn-primary"><i class="fas fa-plus"></i>
-=======
-    <a href="/home/employee/create" (click)="export()" class="btn btn-primary"><i class="fas fa-plus"></i>
->>>>>>> 0b56c2ca1c1e52db7c774c11907094d66dbe7b7b
       Thêm mới nhân viên
     </a>
   </div>
@@ -22,12 +18,7 @@
             <th>SĐT</th>
             <th>Email</th>
             <th>Đơn vị</th>
-<<<<<<< HEAD
           <th>#</th>
-=======
-            <th>Chức năng</th>
-          
->>>>>>> 0b56c2ca1c1e52db7c774c11907094d66dbe7b7b
           </tr>
         </thead>
         <tbody *ngIf="total == 0">
@@ -47,21 +38,10 @@
             <td class="w-20">{{item.EmployeePhone}}</td>
             <td class="w-10">{{item.EmployeeEmail}}</td>
             <td class="w-20">{{item.DepartmentName}}</td>
-<<<<<<< HEAD
             <td>
               <a [routerLink]="['/employee/', item.Employee_ID]"><span class="fa fa-edit"></span></a>
               <a (click)="delete(item.Employee_ID)"><span style="color: red;cursor: pointer;" class="fa fa-trash"></span></a>
             </td>
-=======
-            <td class="text-center">
-              <button class="btn btn-success btn-sm">
-                  <i class="fas fa-pencil-alt"></i>
-              </button>
-              <button class="btn btn-danger btn-sm">
-                  <i class="far fa-trash-alt"></i>
-              </button>
-          </td>
->>>>>>> 0b56c2ca1c1e52db7c774c11907094d66dbe7b7b
           </tr>
         </tbody>
       </table>

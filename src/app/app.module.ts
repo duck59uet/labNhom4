@@ -30,14 +30,11 @@ import { SigninComponent } from './signin/signin.component';
 import { LoginComponent } from './login/login.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { CreateComponent } from './employee/create/create.component';
-<<<<<<< HEAD
 import { EditComponent } from './employee/edit/edit.component';
-=======
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
->>>>>>> 0b56c2ca1c1e52db7c774c11907094d66dbe7b7b
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -55,12 +52,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     LoginComponent,
     EmployeeComponent,
     CreateComponent,
-<<<<<<< HEAD
-    EditComponent
-=======
+    EditComponent,
     HomeComponent,
     DashboardComponent
->>>>>>> 0b56c2ca1c1e52db7c774c11907094d66dbe7b7b
   ],
   imports: [
     BrowserModule,

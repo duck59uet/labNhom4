@@ -10,17 +10,7 @@ import { API } from './api';
 export class AuthenticationService {
     hasUser : boolean = false;
 
-<<<<<<< HEAD
-    constructor(private http: HttpClient, private api : API) {
-        this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('userName')));
-        this.currentUser = this.currentUserSubject.asObservable();
-    }
-
-    public get currentUserValue(): User {
-        return this.currentUserSubject.value;
-=======
     constructor(private http: HttpClient, private api: API) {
->>>>>>> 0b56c2ca1c1e52db7c774c11907094d66dbe7b7b
     }
 
     login(username: string, password: string) {
