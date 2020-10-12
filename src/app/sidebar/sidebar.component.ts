@@ -23,7 +23,7 @@ export class SidebarComponent implements OnInit {
    }
 
   ngOnInit() {
-    userName = localStorage.getItem('userName');
+    this.userName = localStorage.getItem('userName');
   }
 
   getSideBarState() {
