@@ -26,6 +26,9 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { SigninComponent } from './signin/signin.component';
 import { LoginComponent } from './login/login.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { CreateComponent } from './employee/create/create.component';
+import { EditComponent } from './employee/edit/edit.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -40,7 +43,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ContactsComponent,
     DocumentsComponent,
     SigninComponent,
-    LoginComponent
+    LoginComponent,
+    EmployeeComponent,
+    CreateComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

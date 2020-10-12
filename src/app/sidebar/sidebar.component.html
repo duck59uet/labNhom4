@@ -7,14 +7,15 @@
 
       <div class="sidebar-profile">
         <div class="user-pic">
-          <img class="img-responsive img-rounded" src="assets/img/iconlogin.jpg" alt="User picture">
+          <img class="img-responsive img-rounded" src="assets/img/tunghoang.jpg" alt="User picture">
         </div>
         <div class="user-info">
           <span class="user-name">
-            <strong>Nguyễn Văn Đức</strong>
+            <strong>Hoàng Thanh Tùng</strong>
           </span>
           <span class="user-status">
             <i class="fa fa-circle"></i>
+      
             <span>Online</span>
           </span>
         </div>
@@ -33,7 +34,8 @@
       </div> -->
       <div class="sidebar-menu">
         <ul>
-          <li *ngFor="let menu of menus" [ngClass]="{'active': menu.active , 'sidebar-dropdown':menu.type === 'dropdown' , 'header-menu':menu.type === 'header'}">
+          <li *ngFor="let menu of menus"
+            [ngClass]="{'active': menu.active , 'sidebar-dropdown':menu.type === 'dropdown' , 'header-menu':menu.type === 'header'}">
             <span *ngIf="menu.type === 'header'">{{menu.title}}</span>
             <a *ngIf="menu.type !== 'header'" [routerLink]="menu.routerLinkVariable" (click)='toggle(menu)'>
               <i class="{{menu.icon}}"></i>
@@ -44,7 +46,8 @@
               <ul>
                 <li *ngFor="let submenu of menu.submenus">
                   <a [routerLink]="submenu.routerLinkVariable"> {{submenu.title}}
-                    <span *ngIf="submenu.badge" class="badge badge-pill" [ngClass]="submenu.badge.class">{{submenu.badge.text}}</span>
+                    <span *ngIf="submenu.badge" class="badge badge-pill"
+                      [ngClass]="submenu.badge.class">{{submenu.badge.text}}</span>
                   </a>
                 </li>
               </ul>

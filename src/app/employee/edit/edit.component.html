@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Sửa thông tin nhân viên.</h2>
+  <form [formGroup]="editForm" autocomplete="off" (submit)="onSubmit()">
+    <div class="form-group has-feedback">
+      <input type="text" class="form-control" placeholder="Mã nhân viên" formControlName="EmployeeCode">
+      <label class="text-danger" *ngIf="editForm.get('EmployeeCode').touched && editForm.get('EmployeeCode').errors?.required">Trường này không được bỏ trống.</label>
+    </div>
+    <div class="form-group has-feedback">
+      <input type="text" class="form-control" placeholder="Tên nhân viên" formControlName="EmployeeName">
+      <label class="text-danger" *ngIf="editForm.get('EmployeeName').touched && editForm.get('EmployeeName').errors?.required">Trường này không được bỏ trống.</label>
+    </div>
+    <div class="form-group has-feedback">
+      <input type="text" class="form-control" placeholder="EmployeeTitle" formControlName="EmployeeTitle">
+    </div>
+    <div class="form-group has-feedback">
+      <input type="text" class="form-control" placeholder="Điện thoại" formControlName="EmployeePhone">
+    </div>
+    <div class="form-group has-feedback">
+      <input type="text" class="form-control" placeholder="Email" formControlName="EmployeeEmail">
+    </div>
+    <div class="form-group has-feedback">
+      <input type="text" class="form-control" placeholder="Đơn vị" formControlName="DepartmentName">
+      <label class="text-danger" *ngIf="editForm.get('DepartmentName').touched && editForm.get('DepartmentName').errors?.required">Trường này không được bỏ trống.</label>
+    </div>
+    <div class="row">
+      <!-- /.col -->
+      <div class="col-xs-4">
+        <button [disabled]="editForm.invalid" type="submit" class="btn btn-primary btn-flat">Lưu lại</button>
+        <a routerLink="/employee" class="btn btn-default btn-flat">Hủy</a>
+      </div>
+      <!-- /.col -->
+    </div>
+  </form>
+  </div>
