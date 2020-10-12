@@ -9,3 +9,5 @@ npm install
 ng serve
 <br>
 Navigate to http://localhost:4200/. 
+
+Hướng dẫn sử dụng hdsd\FrontEnd_Nhom4_Baocaobaitapcuoikhoa.pptx
