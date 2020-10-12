@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { SidebarService } from './sidebar.service';
+import { Router } from '@angular/router';
 // import { MenusService } from './menus.service';
 
 @Component({
@@ -17,11 +18,13 @@ import { SidebarService } from './sidebar.service';
 })
 export class SidebarComponent implements OnInit {
   menus = [];
-  constructor(public sidebarservice: SidebarService) {
+  userName : string = "";
+  constructor(public sidebarservice: SidebarService, private router : Router) {
     this.menus = sidebarservice.getMenuList();
    }
 
   ngOnInit() {
+    this.userName = localStorage.getItem('Name');
   }
 
   getSideBarState() {
@@ -51,6 +54,11 @@ export class SidebarComponent implements OnInit {
 
   hasBackgroundImage() {
     return this.sidebarservice.hasBackgroundImage;
+  }
+
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
 
 }
