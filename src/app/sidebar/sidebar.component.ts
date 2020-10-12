@@ -17,11 +17,13 @@ import { SidebarService } from './sidebar.service';
 })
 export class SidebarComponent implements OnInit {
   menus = [];
+  userName : string = "";
   constructor(public sidebarservice: SidebarService) {
     this.menus = sidebarservice.getMenuList();
    }
 
   ngOnInit() {
+    userName = localStorage.getItem('userName');
   }
 
   getSideBarState() {

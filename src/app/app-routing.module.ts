@@ -30,7 +30,7 @@ const routes: Routes = [
       { path: 'employee', component: EmployeeComponent },
       { path: 'employee/create', component: CreateComponent },
       { path: 'dashboard', component:DashboardComponent},
-      { path:  'employee/:id',component:EditComponent}
+      { path: 'employee/:id',component:EditComponent}
     ]
   }
 
