@@ -31,6 +31,8 @@ import { LoginComponent } from './login/login.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { CreateComponent } from './employee/create/create.component';
 import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -49,7 +51,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     LoginComponent,
     EmployeeComponent,
     CreateComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NgxPaginationModule,
     FormsModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgxChartsModule
   ],
   providers: [ 
     API, 

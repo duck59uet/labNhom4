@@ -65,6 +65,8 @@ export class LoginComponent implements OnInit {
           if(data == false){
             this.toastr.warning('Đăng nhập thất bại', 'Kiểm tra lại tài khoản mật khẩu');
             this.loading = false;
+          } else {
+            this.toastr.success('Đăng nhập thành công');
           }
         },
         error => {

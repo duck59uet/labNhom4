@@ -10,6 +10,7 @@ import { SigninComponent } from './signin/signin.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { CreateComponent } from './employee/create/create.component';
 import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 // import { SidebarComponent } from './sidebar/sidebar.component';
 
 //Su dung guard
@@ -27,6 +28,7 @@ const routes: Routes = [
       { path: 'help', component: DocumentsComponent },
       { path: 'employee', component: EmployeeComponent },
       { path: 'employee/create', component: CreateComponent },
+      { path: 'dashboard', component:DashboardComponent}
     ]
   }
 

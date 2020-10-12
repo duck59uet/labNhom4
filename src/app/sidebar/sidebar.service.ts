@@ -22,13 +22,8 @@ export class SidebarService {
       type: 'dropdown',
       submenus: [
         {
-          title: 'Dashboard 1'
-        },
-        {
-          title: 'Dashboard 2'
-        },
-        {
-          title: 'Dashboard 3'
+          title: 'Dashboard 1',
+          routerLinkVariable: '/home/dashboard'
         }
       ]
     },
@@ -62,7 +57,7 @@ export class SidebarService {
         },
         {
           title: 'Lịch sử truy nhập trái phép',
-          routerLinkVariable: '/loginvalid'
+          routerLinkVariable: '/home/loginvalid'
         }
       ]
     },
@@ -72,14 +67,14 @@ export class SidebarService {
     },
     {
       title: 'Hướng dẫn sử dụng',
-      routerLinkVariable: '/help',
+      routerLinkVariable: '/home/help',
       icon: 'fa fa-book',
       active: false,
       type: 'simple'
     },
     {
       title: 'Liên hệ',
-      routerLinkVariable: '/contact',
+      routerLinkVariable: '/home/contact',
       icon: 'fa fa-bell',
       active: false,
       type: 'simple'
