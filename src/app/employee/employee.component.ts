@@ -28,7 +28,10 @@ export class EmployeeComponent implements OnInit {
       // let result: any;
       this.employeeService.getListEmployee().subscribe((res)=>{
          this.result = res;
+<<<<<<< HEAD
          
+=======
+>>>>>>> 0b56c2ca1c1e52db7c774c11907094d66dbe7b7b
         //  console.log(this.result);
       }, err => {
         console.log(err);
@@ -38,6 +41,7 @@ export class EmployeeComponent implements OnInit {
       });
     }
 
+<<<<<<< HEAD
     delete(id){
       this.employeeService.deleteEmployee(id).subscribe((res)=>{
       this.getEmployee();
@@ -47,4 +51,8 @@ export class EmployeeComponent implements OnInit {
     }
    
     
+=======
+   
+
+>>>>>>> 0b56c2ca1c1e52db7c774c11907094d66dbe7b7b
 }

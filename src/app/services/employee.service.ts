@@ -19,9 +19,15 @@ export class EmployeeService {
   formModel = this.fb.group({
     EmployeeCode: ['', [Validators.required]],
     EmployeeName: ['', [Validators.required]],
+<<<<<<< HEAD
     EmployeeTitle: ['', [Validators.required]],
     EmployeePhone: ['', [Validators.required]],
     EmployeeEmail: ['', [Validators.required]],
+=======
+    EmployeeTitle: [''],
+    EmployeePhone: [''],
+    EmployeeEmail: [''],
+>>>>>>> 0b56c2ca1c1e52db7c774c11907094d66dbe7b7b
     DepartmentName: ['', [Validators.required]]
   })
 
@@ -43,8 +49,11 @@ export class EmployeeService {
     }).subscribe(
       (data: any) => {
         // Xu ly khi data tra ve thanh cong (status code = 200)
+<<<<<<< HEAD
         alert("Thêm mới nhân viên thành công");
         window.location.href='/employee';
+=======
+>>>>>>> 0b56c2ca1c1e52db7c774c11907094d66dbe7b7b
         console.log(data);
       },
       (error: any) => {
@@ -52,6 +61,7 @@ export class EmployeeService {
       }
     );
   }
+<<<<<<< HEAD
   editEmployee(id) {
 
     this.api.put('/api/employees/'+id, 
@@ -81,5 +91,8 @@ export class EmployeeService {
   getEmployeeById(id){
   return this.api.get('/api/employees/'+id);
   }
+=======
+
+>>>>>>> 0b56c2ca1c1e52db7c774c11907094d66dbe7b7b
 
 }

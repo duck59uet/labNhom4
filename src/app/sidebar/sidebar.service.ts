@@ -22,13 +22,8 @@ export class SidebarService {
       type: 'dropdown',
       submenus: [
         {
-          title: 'Dashboard 1'
-        },
-        {
-          title: 'Dashboard 2'
-        },
-        {
-          title: 'Dashboard 3'
+          title: 'Dashboard 1',
+          routerLinkVariable: '/home/dashboard'
         }
       ]
     },
@@ -41,11 +36,19 @@ export class SidebarService {
       submenus: [
         {
           title: 'Thêm mới nhân viên',
+<<<<<<< HEAD
           routerLinkVariable: '/employee/create'
         },
         {
           title: 'Danh sách nhân viên',
           routerLinkVariable: '/employee'
+=======
+          routerLinkVariable: '/home/employee/create'
+        },
+        {
+          title: 'Danh sách nhân viên',
+          routerLinkVariable: '/home/employee'
+>>>>>>> 0b56c2ca1c1e52db7c774c11907094d66dbe7b7b
         }
       ]
     },
@@ -58,11 +61,11 @@ export class SidebarService {
       submenus: [
         {
           title: 'Lịch sử truy nhập',
-          routerLinkVariable: '/log'
+          routerLinkVariable: '/home/log'
         },
         {
           title: 'Lịch sử truy nhập trái phép',
-          routerLinkVariable: '/loginvalid'
+          routerLinkVariable: '/home/loginvalid'
         }
       ]
     },
@@ -72,14 +75,14 @@ export class SidebarService {
     },
     {
       title: 'Hướng dẫn sử dụng',
-      routerLinkVariable: '/help',
+      routerLinkVariable: '/home/help',
       icon: 'fa fa-book',
       active: false,
       type: 'simple'
     },
     {
       title: 'Liên hệ',
-      routerLinkVariable: '/contact',
+      routerLinkVariable: '/home/contact',
       icon: 'fa fa-bell',
       active: false,
       type: 'simple'

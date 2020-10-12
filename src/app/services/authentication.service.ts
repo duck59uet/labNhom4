@@ -8,9 +8,9 @@ import { API } from './api';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
-    private currentUserSubject: BehaviorSubject<User>;
-    public currentUser: Observable<User>;
+    hasUser : boolean = false;
 
+<<<<<<< HEAD
     constructor(private http: HttpClient, private api : API) {
         this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('userName')));
         this.currentUser = this.currentUserSubject.asObservable();
@@ -18,25 +18,33 @@ export class AuthenticationService {
 
     public get currentUserValue(): User {
         return this.currentUserSubject.value;
+=======
+    constructor(private http: HttpClient, private api: API) {
+>>>>>>> 0b56c2ca1c1e52db7c774c11907094d66dbe7b7b
     }
 
     login(username: string, password: string) {
-        return this.http.post<any>(`/users/authenticate`, { username, password })
+        return this.api.get(`/api/users`)
             .pipe(map(user => {
-                // login successful if there's a jwt token in the response
-                if (user && user.token) {
-                    // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('userName', JSON.stringify(user));
-                    this.currentUserSubject.next(user);
-                }
 
-                return user;
+                var res = [];
+                for (var x in user) {
+                    user.hasOwnProperty(x) && res.push(user[x])
+                }
+                res.forEach(element => {
+                    if(element["Username"] === username && element["Password"] === password){
+                        localStorage.setItem('userName', element["Username"]);
+                        localStorage.setItem('Name', element["Usermail"]);
+                        this.hasUser = true;
+                    }
+                });
+
+                return this.hasUser;
             }));
     }
 
     logout() {
-        // remove user from local storage to log user out
         localStorage.removeItem('userName');
-        this.currentUserSubject.next(null);
+        localStorage.removeItem('Name');
     }
 }
