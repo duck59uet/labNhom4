@@ -55,4 +55,8 @@ export class SidebarComponent implements OnInit {
     return this.sidebarservice.hasBackgroundImage;
   }
 
+  logout(){
+    localStorage.clear();
+  }
+
 }
